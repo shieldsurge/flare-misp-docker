@@ -1,0 +1,14 @@
+services:
+  misp-flare:
+    build: .
+    container_name: misp_flare
+    image: misp_flare:latest
+    environment:
+      - MISP_KEY=${MISP_KEY:-misp_key}
+      - MISP_DOMAIN=${MISP_DOMAIN:-https://localhost}
+      - TENANT=${TENANT:-tenant_id}
+      - CLIENT_ID=${CLIENT_ID:-client_id}
+      - CLIENT_SECRET=${CLIENT_SECRET:-client_secret}
+      - TARGET_PRODUCT=${TARGET_PRODUCT:-Azure Sentinel}
+      - ACTION=${ACTION:-alert}
+    entrypoint: "/run.sh"
