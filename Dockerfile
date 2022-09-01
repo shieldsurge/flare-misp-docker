@@ -14,7 +14,7 @@ RUN apt-get install -y maven openjdk-8-jdk git supervisor
 RUN apt-get install -y vim emacs nano curl
 
 WORKDIR /opt/
-RUN git clone https://github.com/microsoftgraph/security-api-solutions.git
+RUN git clone https://github.com/cisagov/flare-misp-service.git
 WORKDIR /opt/flare-misp-service/misp-trans-client-rest-service/
 RUN ./packageDeployment.sh
 RUN cp deploy/FLAREmispService.tar /opt/mtc/
