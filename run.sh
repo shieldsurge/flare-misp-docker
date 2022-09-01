@@ -8,5 +8,6 @@ sed -i "s|stixtransclient.client.cert\s*=\s*.*$|stixtransclient.client.cert='$AI
 sed -i "s|stixtransclient.misp.key\s*=\s*.*$|stixtransclient.misp.key='$MISP_KEY'|" config.properties
 
 # Start supervisord
-echo "Starting supervisor
+echo "Starting supervisord"
+cd /
 exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
