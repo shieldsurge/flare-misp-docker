@@ -7,9 +7,11 @@ RUN apt-get update && \
     apt-get dist-upgrade -y && apt-get upgrade && apt-get autoremove -y && apt-get clean && \
     apt-get install -y software-properties-common
     
-RUN apt-get install -y vim emacs nano curl
+# Install necessary packages
+RUN apt-get install -y maven openjdk-8-jdk git supervisor
 
-RUN apt-get install -y maven openjdk-8-jdk git
+# Install troubleshooting/development packages
+RUN apt-get install -y vim emacs nano curl
 
 WORKDIR /opt/
 RUN git clone https://github.com/microsoftgraph/security-api-solutions.git
