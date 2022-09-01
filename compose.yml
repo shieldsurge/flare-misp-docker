@@ -4,11 +4,7 @@ services:
     container_name: misp_flare
     image: misp_flare:latest
     environment:
-      - MISP_KEY=${MISP_KEY:-misp_key}
-      - MISP_DOMAIN=${MISP_DOMAIN:-https://localhost}
-      - TENANT=${TENANT:-tenant_id}
-      - CLIENT_ID=${CLIENT_ID:-client_id}
-      - CLIENT_SECRET=${CLIENT_SECRET:-client_secret}
-      - TARGET_PRODUCT=${TARGET_PRODUCT:-Azure Sentinel}
-      - ACTION=${ACTION:-alert}
+      - AIS_KEY_PATH=${AIS_KEY_PATH:-/opt/mtc/config/client.key}
+      - AIS_CERT_PATH=$AIS_CERT_PATH:-/opt/mtc/config/client.crt}
+      - MISP_KEY=${MISP_KEY:-MISP_API_KEY}
     entrypoint: "/run.sh"
