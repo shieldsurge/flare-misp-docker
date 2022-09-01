@@ -7,6 +7,10 @@ sed -i "s|stixtransclient.client.key\s*=\s*.*$|stixtransclient.client.key='$AIS_
 sed -i "s|stixtransclient.client.cert\s*=\s*.*$|stixtransclient.client.cert='$AIS_CERT_PATH'|" config.properties
 sed -i "s|stixtransclient.misp.key\s*=\s*.*$|stixtransclient.misp.key='$MISP_KEY'|" config.properties
 
+# Start the MISP FLARE service
+cd /opt/mtc/
+/opt/mtc/runFLAREmispService.sh
+
 # Start supervisord
 echo "Starting supervisord"
 cd /
