@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y software-properties-common
     
 # Install necessary packages
-RUN apt-get install -y maven openjdk-8-jdk sudo git supervisor tzdate
+RUN apt-get install -y maven openjdk-8-jdk sudo git supervisor tzdata
 
 # Install troubleshooting/development packages
 RUN apt-get install -y vim emacs nano curl
