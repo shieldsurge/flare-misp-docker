@@ -8,4 +8,5 @@ services:
       - AIS_CERT_PATH=${AIS_CERT_PATH:-/opt/mtc/config/client.crt}
       - MISP_KEY=${MISP_KEY:-MISP_API_KEY}
       - COLLECTION=${COLLECTION:-AIS}
+      - TIMEZONE=${TIMEZONE:-UTC}
     entrypoint: "/run.sh"
