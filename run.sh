@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Fix timezone (adapt to your local zone)
+if [ -z "$TIMEZONE" ]; then
+        echo "TIMEZONE is not set, please configure the local time zone manually later..."
+else
+        echo "$TIMEZONE" > /etc/timezone
+        dpkg-reconfigure -f noninteractive tzdata >>/tmp/install.log
+fi
+
 # MISP configuration
 echo "Creating FLARE MISP integration configuration file"
 cd /opt/mtc/config/
