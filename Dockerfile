@@ -15,6 +15,8 @@ RUN apt-get install -y vim emacs nano curl
 
 WORKDIR /opt/
 RUN git clone https://github.com/cisagov/flare-misp-service.git
+WORKDIR /opt/flare-misp-service/
+RUN git checkout 32727d7b09bd1e6caf92a91ae0f20a606e0038d2
 WORKDIR /opt/flare-misp-service/misp-trans-client-rest-service/
 RUN ./packageDeployment.sh
 RUN cp deploy/FLAREmispService.tar /opt/mtc/
