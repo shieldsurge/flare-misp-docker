@@ -4,11 +4,11 @@ services:
     container_name: misp_flare
     image: misp_flare:latest
     environment:
-      - AIS_KEY_PATH=${AIS_KEY_PATH:-/opt/mtc/config/client.key}
-      - AIS_CERT_PATH=${AIS_CERT_PATH:-/opt/mtc/config/client.crt}
-      - AIS_P12_PATH=${AIS_P12_PATH:-/opt/mtc/config/client.p12}
-      - AIS_P12_PASS=${AIS_P12_PASS:-p12_password}
-      - AIS_P12_ALIAS=${AIS_P12_ALIAS:-1}
+      - AIS_KEY_PATH=${AIS_KEY_PATH:-config/FLAREclient1.key}
+      - AIS_CERT_PATH=${AIS_CERT_PATH:-config/FLAREclient1.crt}
+      - AIS_P12_PATH=${AIS_P12_PATH:-config/FLAREclient1.p12}
+      - AIS_P12_PASS=${AIS_P12_PASS:-changeit}
+      - AIS_P12_ALIAS=${AIS_P12_ALIAS:-localhost.localdomain}
       - USE_CLIENT_KEY=${USE_CLIENT_KEY:-true}
       - MISP_SERVER=${MISP_SERVER:-localhost}
       - MISP_KEY=${MISP_KEY:-MISP_API_KEY}
