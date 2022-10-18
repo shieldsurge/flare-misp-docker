@@ -24,6 +24,9 @@ sed -i "s|^stixtransclient.source.collection\s*=\s*.*$|stixtransclient.source.co
 sed -i "s|^mtc.quartz.frequency\s*=\s*.*$|mtc.quartz.frequency=$FREQUENCY|" config.properties
 sed -i "s|^rtimeout\s*=\s*.*$|rtimeout='$READ_TIMEOUT'|" application.properties
 
+JAR=$(ls /opt/mtc/*.jar)
+sed -i "s|^java.*-jar mtc-rest-service-.*$|java -Xmx$JAVA_HEAP_SIZE -Duser.timezone=$TIMEZONE -jar $JAR &|" /opt/mtc/runFLAREmispService.sh
+
 # Start the MISP FLARE service
 cd /opt/mtc/
 /opt/mtc/runFLAREmispService.sh
