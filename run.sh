@@ -17,6 +17,8 @@ sed -i "s|^client.ssl.key-store\s*=\s*.*$|client.ssl.key-store=file:'$AIS_P12_PA
 sed -i "s|^server.ssl.key-store\s*=\s*.*$|server.ssl.key-store=file:'$AIS_P12_PATH'|" application.properties
 sed -i "s|^server.ssl.key-store-password\s*=\s*.*$|server.ssl.key-store-password='$AIS_P12_PASS'|" application.properties
 sed -i "s|^server.ssl.key-password\s*=\s*.*$|server.ssl.key-password='$AIS_P12_PASS'|" application.properties
+sed -i "s|^server.ssl.key-alias\s*=\s*.*$|server.ssl.key-alias='$AIS_P12_ALIAS'|" application.properties
+sed -i "s|^2way.ssl.auth\s*=\s*.*$|2way.ssl.auth=$USE_CLIENT_KEY|" application.properties
 sed -i "s|^misptransclient.post.baseurl\s*=\s*.*$|misptransclient.post.baseurl=https://$MISP_SERVER/events/|" config.properties
 sed -i "s|^stixtransclient.misp.url\s*=\s*.*$|stixtransclient.misp.url=https://$MISP_SERVER/health/|" config.properties
 sed -i "s|^stixtransclient.misp.key\s*=\s*.*$|stixtransclient.misp.key='$MISP_KEY'|" config.properties
