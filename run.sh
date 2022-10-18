@@ -11,10 +11,10 @@ fi
 # MISP configuration
 echo "Creating FLARE MISP integration configuration file"
 cd /opt/mtc/config/
-sed -i "s|^stixtransclient.client.key\s*=\s*.*$|stixtransclient.client.key='$AIS_KEY_PATH'|" config.properties
-sed -i "s|^stixtransclient.client.cert\s*=\s*.*$|stixtransclient.client.cert='$AIS_CERT_PATH'|" config.properties
-sed -i "s|^client.ssl.key-store\s*=\s*.*$|client.ssl.key-store=file:'$AIS_P12_PATH'|" application.properties
-sed -i "s|^server.ssl.key-store\s*=\s*.*$|server.ssl.key-store=file:'$AIS_P12_PATH'|" application.properties
+sed -i "s|^stixtransclient.client.key\s*=\s*.*$|stixtransclient.client.key=$AIS_KEY_PATH|" config.properties
+sed -i "s|^stixtransclient.client.cert\s*=\s*.*$|stixtransclient.client.cert=$AIS_CERT_PATH|" config.properties
+sed -i "s|^client.ssl.key-store\s*=\s*.*$|client.ssl.key-store=file:$AIS_P12_PATH|" application.properties
+sed -i "s|^server.ssl.key-store\s*=\s*.*$|server.ssl.key-store=file:$AIS_P12_PATH|" application.properties
 sed -i "s|^server.ssl.key-store-password\s*=\s*.*$|server.ssl.key-store-password=$AIS_P12_PASS|" application.properties
 sed -i "s|^server.ssl.key-password\s*=\s*.*$|server.ssl.key-password=$AIS_P12_PASS|" application.properties
 sed -i "s|^server.ssl.key-alias\s*=\s*.*$|server.ssl.key-alias=$AIS_P12_ALIAS|" application.properties
