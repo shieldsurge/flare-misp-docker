@@ -8,6 +8,7 @@ services:
       - AIS_CERT_PATH=${AIS_CERT_PATH:-/opt/mtc/config/client.crt}
       - AIS_P12_PATH=${AIS_P12_PATH:-/opt/mtc/config/client.p12}
       - AIS_P12_PASS=${AIS_P12_PASS:-p12_password}
+      - AIS_P12_ALIAS=${AIS_P12_ALIAS:-1}
       - MISP_SERVER=${MISP_SERVER:-localhost}
       - MISP_KEY=${MISP_KEY:-MISP_API_KEY}
       - COLLECTION=${COLLECTION:-AIS}
