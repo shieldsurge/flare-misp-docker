@@ -22,6 +22,7 @@ sed -i "s|^2way.ssl.auth\s*=\s*.*$|2way.ssl.auth=$USE_CLIENT_KEY|" application.p
 sed -i "s|^misptransclient.post.baseurl\s*=\s*.*$|misptransclient.post.baseurl=https://$MISP_SERVER/events/|" config.properties
 sed -i "s|^stixtransclient.misp.url\s*=\s*.*$|stixtransclient.misp.url=https://$MISP_SERVER/health/|" config.properties
 sed -i "s|^stixtransclient.misp.key\s*=\s*.*$|stixtransclient.misp.key=$MISP_KEY|" config.properties
+sed -i "s|^misp.authorization.key\s*=\s*.*$|misp.authorization.key=$MISP_KEY|" config.properties
 sed -i "s|^stixtransclient.source.collection\s*=\s*.*$|stixtransclient.source.collection=$COLLECTION|" config.properties
 sed -i "s|^mtc.quartz.frequency\s*=\s*.*$|mtc.quartz.frequency=$FREQUENCY|" config.properties
 sed -i "s|^rtimeout\s*=\s*.*$|rtimeout=$READ_TIMEOUT|" application.properties
