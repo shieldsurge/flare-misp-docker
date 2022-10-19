@@ -8,7 +8,7 @@ services:
       - AIS_CERT_PATH=${AIS_CERT_PATH:-config/FLAREclient1.crt}
       - AIS_P12_PATH=${AIS_P12_PATH:-config/FLAREclient1.p12}
       - AIS_P12_PASS=${AIS_P12_PASS:-changeit}
-      - AIS_P12_ALIAS=${AIS_P12_ALIAS:-localhost.localdomain}
+      - AIS_P12_ALIAS=${AIS_P12_ALIAS:-1}
       - USE_CLIENT_KEY=${USE_CLIENT_KEY:-true}
       - MISP_SERVER=${MISP_SERVER:-localhost}
       - MISP_KEY=${MISP_KEY:-MISP_API_KEY}
